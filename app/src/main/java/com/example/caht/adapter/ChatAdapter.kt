@@ -9,7 +9,11 @@ import com.example.caht.databinding.ItemSecondMessageBinding
 
 class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val messages = mutableListOf<Message>()
+    var messages = emptyList<Message>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
 
     override fun getItemCount() = messages.size
@@ -63,12 +67,6 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fun bind(item: Message) {
             binding.secondUserMessageTextView.text = item.message
         }
-    }
-
-    fun sendMessage (text: String, userId: Int){
-        val newMessage = Message(userId, text)
-        messages.add(newMessage)
-        notifyDataSetChanged()
     }
 
     companion object {

@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.caht.adapter.ChatAdapter
 import com.example.caht.adapter.ChatAdapter.Companion.VIEW_TYPE_MESSAGE_LEFT
 import com.example.caht.adapter.ChatAdapter.Companion.VIEW_TYPE_MESSAGE_RIGHT
+import com.example.caht.data.Message
 import com.example.caht.databinding.ActivityMainBinding
 import com.example.caht.decorator.MessageDecorator
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val baseAdapter = ChatAdapter()
     var currentUserId = VIEW_TYPE_MESSAGE_LEFT
+    val messages = mutableListOf<Message>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,10 +42,13 @@ class MainActivity : AppCompatActivity() {
         secondUser.setOnClickListener { currentUserId = VIEW_TYPE_MESSAGE_RIGHT
             binding.secondUser.setBackgroundColor(Color.parseColor("#009688"))
             binding.firstUser.setBackgroundColor(Color.parseColor("#2196F3"))}
+
         send.setOnClickListener { sendMessage(editText.text.toString(), currentUserId) }
     }
 
-    private fun sendMessage(text: String, userId: Int) {
-        baseAdapter.sendMessage(text, userId)
+    private fun sendMessage (text: String, userId: Int){
+        val newMessage = Message(userId, text)
+        messages.add(newMessage)
+        baseAdapter.messages = messages
     }
 }
