@@ -1,4 +1,4 @@
-package com.example.caht
+package com.example.caht.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,11 +9,8 @@ import com.example.caht.databinding.ItemSecondMessageBinding
 
 class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var messages = emptyList<Message>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+    private val messages = mutableListOf<Message>()
+
 
     override fun getItemCount() = messages.size
 
@@ -66,6 +63,12 @@ class ChatAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fun bind(item: Message) {
             binding.secondUserMessageTextView.text = item.message
         }
+    }
+
+    fun sendMessage (text: String, userId: Int){
+        val newMessage = Message(userId, text)
+        messages.add(newMessage)
+        notifyDataSetChanged()
     }
 
     companion object {
