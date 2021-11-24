@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val baseAdapter = ChatAdapter()
     var currentUserId = VIEW_TYPE_MESSAGE_LEFT
-    val messages = mutableListOf<Message>()
+    private val messages = mutableListOf<Message>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
