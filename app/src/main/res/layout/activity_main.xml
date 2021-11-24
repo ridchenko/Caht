@@ -46,7 +46,7 @@
         android:layout_weight="1">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/txtSendMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
             android:autofillHints="Enter text ..." />
 
         <Button
-            android:id="@+id/send"
+            android:id="@+id/btnSendMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

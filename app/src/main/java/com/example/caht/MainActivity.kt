@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             binding.secondUser.setBackgroundColor(Color.parseColor("#009688"))
             binding.firstUser.setBackgroundColor(Color.parseColor("#2196F3"))}
 
-        send.setOnClickListener { sendMessage(editText.text.toString(), currentUserId) }
+        btnSendMessage.setOnClickListener { sendMessage(txtSendMessage.text.toString(), currentUserId) }
     }
 
     private fun sendMessage (text: String, userId: Int){
