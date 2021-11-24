@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun initAdapter() {
         binding.recyclerViewContainer.apply {
             adapter = baseAdapter
+            addItemDecoration(MessageDecorator(15))
         }
     }
 
