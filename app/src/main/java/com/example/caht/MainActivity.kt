@@ -2,15 +2,18 @@ package com.example.caht
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
+import com.example.caht.ChatAdapter.Companion.VIEW_TYPE_MESSAGE_LEFT
+import com.example.caht.data.Message
 import com.example.caht.data.messages
 import com.example.caht.databinding.ActivityMainBinding
-import ua.motionman.recyclerviewlecture.basicadapter.ChatAdapter
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val baseAdapter = ChatAdapter()
+    val currentUserId = VIEW_TYPE_MESSAGE_LEFT
+    val messageList = mutableListOf<Message>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         baseAdapter.messages = messages
     }
 
-    fun initAdapter() {
+    private fun initAdapter() {
         binding.recyclerViewContainer.apply {
             adapter = baseAdapter
         }
