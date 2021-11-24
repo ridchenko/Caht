@@ -1,4 +1,4 @@
-package ua.motionman.recyclerviewlecture.basicadapter
+package com.example.caht
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
