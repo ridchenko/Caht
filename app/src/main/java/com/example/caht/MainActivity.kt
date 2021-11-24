@@ -1,5 +1,6 @@
 package com.example.caht
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.caht.adapter.ChatAdapter
@@ -32,8 +33,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initClickListener() = with(binding) {
-        firstUser.setOnClickListener { currentUserId = VIEW_TYPE_MESSAGE_LEFT }
-        secondUser.setOnClickListener { currentUserId = VIEW_TYPE_MESSAGE_RIGHT }
+        firstUser.setOnClickListener { currentUserId = VIEW_TYPE_MESSAGE_LEFT
+            binding.firstUser.setBackgroundColor(Color.parseColor("#009688"))
+            binding.secondUser.setBackgroundColor(Color.parseColor("#2196F3"))
+        }
+        secondUser.setOnClickListener { currentUserId = VIEW_TYPE_MESSAGE_RIGHT
+            binding.secondUser.setBackgroundColor(Color.parseColor("#009688"))
+            binding.firstUser.setBackgroundColor(Color.parseColor("#2196F3"))}
         send.setOnClickListener { sendMessage(editText.text.toString(), currentUserId) }
     }
 
