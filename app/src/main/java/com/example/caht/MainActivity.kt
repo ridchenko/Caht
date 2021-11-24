@@ -6,9 +6,8 @@ import android.os.Bundle
 import com.example.caht.adapter.ChatAdapter
 import com.example.caht.adapter.ChatAdapter.Companion.VIEW_TYPE_MESSAGE_LEFT
 import com.example.caht.adapter.ChatAdapter.Companion.VIEW_TYPE_MESSAGE_RIGHT
-import com.example.caht.data.Message
-import com.example.caht.data.messages
 import com.example.caht.databinding.ActivityMainBinding
+import com.example.caht.decorator.MessageDecorator
 
 class MainActivity : AppCompatActivity() {
 

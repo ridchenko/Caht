@@ -1,4 +1,4 @@
-package com.example.caht
+package com.example.caht.decorator
 
 import android.graphics.Rect
 import android.view.View
