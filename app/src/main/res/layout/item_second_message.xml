@@ -9,12 +9,12 @@
         android:id="@+id/secondUserMessageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
+        android:background="#2196F3"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textSize="20dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Second message" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
